@@ -1,0 +1,88 @@
+@import "../../../../assets/scss/variable";
+@import "../../../../assets/scss/mixins/mixins";
+
+.profile-order {
+  .order-item {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px 0;
+    padding: 15px;
+
+    .order-subitem {
+      @include flex($justify: space-between, $align: center, $gap: 15px);
+      margin: 10px 0;
+
+      &__avatar {
+        height: 120px;
+        width: 120px;
+      }
+
+      &__price {
+        @include flex($justify: flex-end, $align: center, $gap: 5px);
+        margin-left: auto;
+      }
+
+      &__detail {
+        align-self: start;
+      }
+
+      &__listed-price {
+        color: $gray-color;
+        text-decoration: line-through;
+      }
+
+      &__discount-price {
+        font-size: 1.3rem;
+        color: $red-color;
+      }
+    }
+
+    &__status {
+      padding: 5px 8px;
+      border-radius: 5px;
+
+      &--ordered {
+        background-color: $other-color;
+      }
+
+      &--in-progress {
+        background-color: $blue-color;
+      }
+
+      &--completed {
+        background-color: $green-color1;
+      }
+
+      &--cancelled {
+        background-color: $text-gray2;
+        color: $gray-color2;
+      }
+    }
+
+    &__id {
+      font-weight: bold;
+    }
+
+    &__total {
+      font-size: 1.5rem;
+      color: $red-color;
+      margin-left: 10px;
+    }
+
+    &__header {
+      @include flex($justify: space-between, $align: center, $gap: 15px);
+    }
+
+    &__footer {
+      @include flex($justify: flex-end, $align: center, $gap: 15px);
+
+      button {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.order-pagination {
+  @include flex($justify: center, $align: center);
+}

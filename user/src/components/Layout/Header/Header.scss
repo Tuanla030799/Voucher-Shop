@@ -1,0 +1,157 @@
+@import "../../../assets/scss/_variable.scss";
+@import "../../../assets//scss/mixins/mixins";
+@import "../../../assets/scss/keyframes/keyframes";
+
+.header {
+  height: 130px;
+  z-index: $z-drawer;
+  background-color: $bg-white;
+
+  &__icon {
+    padding: 0;
+
+    i {
+      padding: 0 10px;
+    }
+  }
+
+  //--------------header-top-----------------------------------
+
+  .language {
+    @include flex($justify: center, $align: center);
+    z-index: $z-drawer;
+    position: relative;
+    font-size: $fs-s;
+    cursor: pointer;
+    height: 46px;
+
+    i {
+      font-size: $fs-xs;
+    }
+
+    &__option {
+      position: absolute;
+      top: 46px;
+      width: 100%;
+      background-color: $bg-white;
+      animation: extend ease-in 0.2s;
+      transform-origin: top;
+      display: none;
+    }
+
+    &__item {
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+
+  .language:hover .language__option {
+    display: block;
+  }
+
+  &__right {
+    @include flex($justify: center, $align: center);
+  }
+
+  &-top {
+    background-color: $bg-header;
+    color: $text-gray2;
+
+    &-wrapper {
+      height: 46px;
+      @include flex($justify: space-between, $align: center);
+    }
+
+    .button-base {
+      padding: 5px 12px;
+      height: 32px;
+    }
+  }
+
+  //--------------header-mid-----------------------------------
+
+  &-mid {
+    &-wrapper {
+      height: 80px;
+      @include flex($justify: space-between, $align: center, $wrap: nowrap);
+    }
+
+    i {
+      font-size: $fs-xl;
+      padding: 0 10px;
+    }
+  }
+
+  &__info {
+    @include flex($justify: center, $align: center);
+    height: 100%;
+    position: relative;
+  }
+
+  &__nav {
+    @include flex($justify: center, $align: center);
+  }
+
+  &__logo {
+    padding: 0 30px;
+
+    @include respond-to(small) {
+      padding: 0;
+    }
+  }
+
+  .account {
+    @include flex($justify: center, $align: center);
+    height: 100%;
+
+    &__option {
+      z-index: $z-drawer;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      background-color: $bg-white;
+      animation: extend ease-in 0.2s;
+      transform-origin: top;
+      display: none;
+    }
+
+    &__item {
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+      color: $text-gray2;
+    }
+
+    &__item:hover {
+      color: $other-color;
+    }
+  }
+
+  .account:hover .account__option {
+    display: block;
+  }
+
+  .text__login {
+    font-size: $fs-s;
+    cursor: pointer;
+  }
+
+  &__cart {
+    position: relative;
+
+    .card__total {
+      @include flex($justify: center, $align: center);
+      position: absolute;
+      top: 0;
+      left: 85%;
+      height: 1.2rem;
+      width: 1.2rem;
+      background-color: $red-color;
+      border-radius: 50%;
+      color: $bg-white;
+      font-size: $fs-xs;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
